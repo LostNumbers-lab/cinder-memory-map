@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102b3c">
+  <title>신더의 기억지도 — 부산의 시간을 밝히다</title>
+  <meta name="description" content="신더와 함께 부산 원도심의 역사와 오늘의 풍경을 탐험하는 인터랙티브 기억지도">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preload" href="assets/fonts/Ownglyph-BERRY-RW.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="typography.css">
+  <link rel="preload" href="assets/busan-today.png" as="image">
+  <script src="places-today.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <a class="brand" href="index.html" aria-label="신더의 기억지도 처음으로"><span class="brand-flame" aria-hidden="true">♨</span>신더의 기억지도<span class="brand-en">CINDER’S MEMORY MAP</span></a>
+    <nav aria-label="주 메뉴"><button class="nav-link active" data-view="map">기억지도</button><button class="nav-link" data-view="routes">여행 코스</button><button class="nav-link" data-view="collection">나의 기록 <span id="nav-count">0</span></button></nav>
+    <button class="sound-button" id="sound-toggle" aria-pressed="false" aria-label="배경음 켜기" title="배경음 켜기">♫<span class="sound-line"></span></button>
+  </header>
+
+  <main>
+    <section class="hero" id="map" aria-labelledby="hero-title">
+      <div class="map-art" aria-hidden="true"></div><div class="map-shade" aria-hidden="true"></div><div class="sparkles" aria-hidden="true"></div>
+      <div class="hero-copy"><p class="eyebrow"><span>✦</span> 부산 역사 탐험</p><h1 id="hero-title"><em>신더</em>와 함께,<br>부산의 시간을 밝히다</h1><p class="hero-description">골목에 남은 이야기를 따라 떠나는 부산 여행.<br>작은 불씨 하나로, 도시의 기억이 깨어납니다.</p><div class="hero-actions"><button class="button button-primary" id="start">기억 탐험 시작하기 <span>↗</span></button><button class="text-button" id="help">이용 방법 <span>→</span></button></div></div>
+      <div class="era-control" role="group" aria-label="관광 지도 선택"><button data-era="today" aria-pressed="false">오늘의 부산</button><span></span><button data-era="memory" class="selected" aria-pressed="true">기억 속 부산</button></div>
+      <p class="map-caption"><span class="live-dot"></span><span id="era-caption">불빛을 눌러 잠들어 있는 이야기를 만나보세요</span></p>
+
+      <div class="landmarks memory-landmarks" aria-label="역사 탐험 장소">
+        <button class="landmark stairs" data-place="stairs" aria-label="40계단 이야기 탐험"><span class="fire-marker">♨</span><span class="place-label"><small>01 · 일상의 기억</small>40계단 <span>↗</span></span></button>
+        <button class="landmark books" data-place="books" aria-label="보수동 책방골목 이야기 탐험"><span class="fire-marker">♨</span><span class="place-label"><small>02 · 책장 속 기억</small>보수동 책방골목 <span>↗</span></span></button>
+        <button class="landmark bridge" data-place="bridge" aria-label="영도다리 이야기 탐험"><span class="fire-marker">♨</span><span class="place-label"><small>03 · 만남의 기억</small>영도다리 <span>↗</span></span></button>
+      </div>
+
+      <div class="today-landmarks" aria-label="오늘의 부산 대표 관광지" hidden>
+        <button class="landmark cinema" data-place="cinema" aria-label="영화의전당과 부산국제영화제 소개"><span class="tour-marker">01</span><span class="place-label"><small>영화 · 건축 · BIFF</small>영화의전당 <span>↗</span></span></button>
+        <button class="landmark biff" data-place="biff" aria-label="BIFF광장 소개"><span class="tour-marker">02</span><span class="place-label"><small>남포동 · 영화의 발자취</small>BIFF광장 <span>↗</span></span></button>
+        <button class="landmark gwangan" data-place="gwangan" aria-label="광안리와 광안대교 소개"><span class="tour-marker">03</span><span class="place-label"><small>바다 · 야경 · 산책</small>광안리·광안대교 <span>↗</span></span></button>
+        <button class="landmark haeundae" data-place="haeundae" aria-label="해운대해수욕장 소개"><span class="tour-marker">04</span><span class="place-label"><small>해운대 · 해변과 도시</small>해운대 <span>↗</span></span></button>
+        <button class="landmark gamcheon" data-place="gamcheon" aria-label="감천문화마을 소개"><span class="tour-marker">05</span><span class="place-label"><small>골목 · 예술 · 마을</small>감천문화마을 <span>↗</span></span></button>
+      </div>
+
+      <div class="companion"><img src="assets/cinder.png" alt="주황색 불꽃 머리와 검은 망토를 가진 여행 동료 신더" width="1280" height="1280"><div class="speech">이 도시의 기억을<br>함께 찾아볼래?<span>너의 여행 친구, 신더</span></div></div>
+      <div class="map-footnote"><span>BUSAN · A JOURNEY THROUGH TIME</span><span>관광 지리를 재구성한 콘셉트 지도</span></div>
+    </section>
+
+    <section class="today-directory" id="today-directory" aria-label="대표 관광지 바로 보기" hidden><div class="directory-intro"><p class="small-label">BUSAN, HERE & NOW</p><h2>오늘은 어디로 떠날까요?</h2><p>명소를 고르면 소개와 대표 이야기가 열립니다.</p></div><div class="directory-buttons"><button data-place="cinema"><small>01 · 영화와 건축</small>영화의전당 · BIFF <span>↗</span></button><button data-place="biff"><small>02 · 영화의 발자취</small>BIFF광장 <span>↗</span></button><button data-place="gwangan"><small>03 · 빛나는 밤바다</small>광안리 · 광안대교 <span>↗</span></button><button data-place="haeundae"><small>04 · 해변과 도시</small>해운대 <span>↗</span></button><button data-place="gamcheon"><small>05 · 골목 속 예술</small>감천문화마을 <span>↗</span></button></div><p class="directory-note">공식 관광 자료와 사진을 참고한 창작 일러스트입니다. 실제 지리·거리와 일치하지 않으며 실시간 풍경은 아닙니다.</p></section>
+
+    <section class="chapter" aria-label="추천 이야기"><div class="chapter-image" aria-hidden="true"><span>CHAPTER 01</span></div><div class="chapter-copy"><p class="eyebrow" id="chapter-label">✦ 첫 번째 이야기</p><h2 id="chapter-title">영도다리에 남겨진 편지</h2><p id="chapter-description">다리 위에 남아 있는 만남의 기억을 찾아보세요.</p></div><button class="button button-dark" id="chapter-open" data-place="bridge">이야기 열기 <span>→</span></button><div class="progress-block"><span id="progress-label">발견한 기억</span><p><strong id="memory-count">0</strong><span id="memory-total"> / 3</span></p><div class="progress-track"><span id="progress-fill"></span></div></div></section>
+    <footer><span>신더의 기억지도 <span class="footer-divider">|</span> 부산의 어제와 오늘을 잇는 여행</span><span>LOCAL DEMO · 역사 해설과 창작 이야기를 구분해 제공합니다.</span></footer>
+  </main>
+
+  <dialog id="story-dialog" class="dialog story-dialog" aria-labelledby="story-title"><div class="dialog-banner"><span id="story-category" class="eyebrow"></span><button class="close-button" data-close aria-label="창 닫기">×</button><span class="banner-number" aria-hidden="true">01</span></div><div class="dialog-content"><p class="small-label">CINDER’S MEMORY ARCHIVE</p><h2 id="story-title"></h2><p id="story-intro" class="story-intro"></p><div class="story-tabs" role="tablist" aria-label="장소 콘텐츠"><button role="tab" id="tab-memory" aria-controls="story-panel" aria-selected="true" data-tab="memory">기억 속 이야기</button><button role="tab" id="tab-visit" aria-controls="story-panel" aria-selected="false" data-tab="visit">오늘의 여행</button></div><div id="story-panel" role="tabpanel" aria-labelledby="tab-memory" tabindex="0"></div><div class="dialog-actions"><button id="collect" class="button button-primary">이 기억 간직하기 <span>✦</span></button><button class="text-button dark-text" data-close>지도로 돌아가기 →</button></div></div></dialog>
+  <dialog id="info-dialog" class="dialog info-dialog" aria-labelledby="info-title"><button class="close-button info-close" data-close aria-label="창 닫기">×</button><div class="dialog-content"><p class="small-label">YOUR JOURNEY WITH CINDER</p><h2 id="info-title"></h2><div id="info-content"></div></div></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

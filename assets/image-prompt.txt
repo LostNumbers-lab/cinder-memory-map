@@ -1,0 +1,7 @@
+Tool: OpenAI built-in image_gen (not CLI).
+Reference: previously generated Cinder Memory Map homepage concept.
+Output: busan-map.png
+
+Create a clean environmental background asset for implementing the reference website in actual HTML. Use the input as visual style and composition reference. Output ONLY the illustrated Busan coastal night panorama, landscape 16:9. REMOVE ALL typography, labels, icons, fire markers, UI buttons, menus, paper header and footer, character mascot, speech bubbles, cards. No text whatsoever. Seamlessly extend scenery into removed areas. Preserve beautiful detailed watercolor and ink Busan old town hills with stacked homes and stairs at upper left and middle, bookshop streets in center, deep midnight petrol blue harbor at right, a stylized bascule bridge in lower right, boats, warm amber window lights, fine paper grain. Leave left third noticeably darker and less busy navy for HTML headline overlay, with gentle landscape silhouettes. Rich premium storybook museum aesthetic. Panoramic conceptual city illustration, not a geographically accurate map. Crisp detailed high resolution. No text, no character, no UI, no borders.
+
+Cinder character: user-supplied original PNG; copied without modification.
