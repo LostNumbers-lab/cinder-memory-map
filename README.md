@@ -22,6 +22,7 @@
 | `index.html` | 메인 화면과 대화상자 |
 | `styles.css` | 기본 디자인과 반응형 배치 |
 | `typography.css` | 온글잎 베리려원 글꼴 및 글자 크기 |
+| `copy-layout.css` | 설명문 단락 간격, 소제목, 줄바꿈 |
 | `app.js` | 지도 전환, 장소 콘텐츠, 기록 저장 |
 | `places-today.js` | 현대 부산 명소 정보와 공식 출처 |
 | `cinder-visuals.js` | 장소별 캐릭터 이미지, 대체 텍스트와 문구 |
