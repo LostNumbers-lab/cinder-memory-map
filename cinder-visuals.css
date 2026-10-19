@@ -10,3 +10,13 @@
 .companion>img{object-fit:contain}
 @media(max-width:760px){.story-scene{margin-top:19px}.story-scene figcaption{font-size:17px;padding:9px 12px}.scene-note{font-size:12px}.info-companion{gap:9px;padding:7px 12px 7px 2px}.info-companion img{width:115px;height:135px}.info-companion p{font-size:19px}.collection-thumb{width:59px;height:49px}}
 @media(prefers-reduced-motion:reduce){.companion>img{animation:none}}
+
+/* A drawn ember replaces the font-dependent hot-spring symbol. */
+.brand-flame{display:grid;place-items:center;width:40px;height:50px;font-size:0;line-height:1;text-shadow:none}
+.brand-flame img{display:block;width:40px;height:50px;object-fit:contain}
+.fire-marker{width:39px;height:49px;font-size:0;text-shadow:none}
+.fire-marker img{display:block;width:36px;height:45px;filter:drop-shadow(0 0 5px #ffd080a6) drop-shadow(0 0 13px #ff892477);transition:transform .2s}
+.fire-marker:after{display:none}
+.landmark:hover .fire-marker img{transform:translateY(-2px) scale(1.08)}
+@media(max-width:760px){.brand-flame{width:30px;height:38px}.brand-flame img{width:30px;height:38px}.fire-marker{width:31px;height:42px}.fire-marker img{width:30px;height:38px}}
+@media(prefers-reduced-motion:reduce){.fire-marker img{transition:none}.landmark:hover .fire-marker img{transform:none}}
