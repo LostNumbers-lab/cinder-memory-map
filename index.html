@@ -9,8 +9,10 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="preload" href="assets/fonts/Ownglyph-BERRY-RW.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="typography.css">
+  <link rel="stylesheet" href="cinder-visuals.css">
   <link rel="preload" href="assets/busan-today.png" as="image">
   <script src="places-today.js" defer></script>
+  <script src="cinder-visuals.js" defer></script>
   <script src="app.js" defer></script>
 </head>
 <body>
@@ -41,7 +43,7 @@
         <button class="landmark gamcheon" data-place="gamcheon" aria-label="감천문화마을 소개"><span class="tour-marker">05</span><span class="place-label"><small>골목 · 예술 · 마을</small>감천문화마을 <span>↗</span></span></button>
       </div>
 
-      <div class="companion"><img src="assets/cinder.png" alt="주황색 불꽃 머리와 검은 망토를 가진 여행 동료 신더" width="1280" height="1280"><div class="speech">이 도시의 기억을<br>함께 찾아볼래?<span>너의 여행 친구, 신더</span></div></div>
+      <div class="companion"><img id="cinder-companion" src="assets/cinder/archive.png" alt="작은 황금빛 기억이 떠오르는 여행 앨범을 소중히 펼쳐 든 신더" width="1280" height="1280"><div class="speech">이 도시의 기억을<br>함께 찾아볼래?<span>너의 여행 친구, 신더</span></div></div>
       <div class="map-footnote"><span>BUSAN · A JOURNEY THROUGH TIME</span><span>관광 지리를 재구성한 콘셉트 지도</span></div>
     </section>
 
@@ -51,8 +53,8 @@
     <footer><span>신더의 기억지도 <span class="footer-divider">|</span> 부산의 어제와 오늘을 잇는 여행</span><span>LOCAL DEMO · 역사 해설과 창작 이야기를 구분해 제공합니다.</span></footer>
   </main>
 
-  <dialog id="story-dialog" class="dialog story-dialog" aria-labelledby="story-title"><div class="dialog-banner"><span id="story-category" class="eyebrow"></span><button class="close-button" data-close aria-label="창 닫기">×</button><span class="banner-number" aria-hidden="true">01</span></div><div class="dialog-content"><p class="small-label">CINDER’S MEMORY ARCHIVE</p><h2 id="story-title"></h2><p id="story-intro" class="story-intro"></p><div class="story-tabs" role="tablist" aria-label="장소 콘텐츠"><button role="tab" id="tab-memory" aria-controls="story-panel" aria-selected="true" data-tab="memory">기억 속 이야기</button><button role="tab" id="tab-visit" aria-controls="story-panel" aria-selected="false" data-tab="visit">오늘의 여행</button></div><div id="story-panel" role="tabpanel" aria-labelledby="tab-memory" tabindex="0"></div><div class="dialog-actions"><button id="collect" class="button button-primary">이 기억 간직하기 <span>✦</span></button><button class="text-button dark-text" data-close>지도로 돌아가기 →</button></div></div></dialog>
-  <dialog id="info-dialog" class="dialog info-dialog" aria-labelledby="info-title"><button class="close-button info-close" data-close aria-label="창 닫기">×</button><div class="dialog-content"><p class="small-label">YOUR JOURNEY WITH CINDER</p><h2 id="info-title"></h2><div id="info-content"></div></div></dialog>
+  <dialog id="story-dialog" class="dialog story-dialog" aria-labelledby="story-title"><div class="dialog-banner"><span id="story-category" class="eyebrow"></span><button class="close-button" data-close aria-label="창 닫기">×</button><span class="banner-number" aria-hidden="true">01</span></div><div class="dialog-content"><p class="small-label">CINDER’S MEMORY ARCHIVE</p><h2 id="story-title"></h2><p id="story-intro" class="story-intro"></p><figure class="story-scene"><img id="story-character" src="assets/cinder/bridge.png" alt="영도다리에서 편지를 품은 신더" width="1536" height="1024" decoding="async"><figcaption id="story-character-caption"></figcaption></figure><p class="scene-note">신더가 함께하는 장면은 이야기를 위해 제작한 창작 일러스트입니다.</p><div class="story-tabs" role="tablist" aria-label="장소 콘텐츠"><button role="tab" id="tab-memory" aria-controls="story-panel" aria-selected="true" data-tab="memory">기억 속 이야기</button><button role="tab" id="tab-visit" aria-controls="story-panel" aria-selected="false" data-tab="visit">오늘의 여행</button></div><div id="story-panel" role="tabpanel" aria-labelledby="tab-memory" tabindex="0"></div><div class="dialog-actions"><button id="collect" class="button button-primary">이 기억 간직하기 <span>✦</span></button><button class="text-button dark-text" data-close>지도로 돌아가기 →</button></div></div></dialog>
+  <dialog id="info-dialog" class="dialog info-dialog" aria-labelledby="info-title"><button class="close-button info-close" data-close aria-label="창 닫기">×</button><div class="dialog-content"><p class="small-label">YOUR JOURNEY WITH CINDER</p><h2 id="info-title"></h2><div class="info-companion"><img id="info-character" src="assets/cinder/guide.png" alt="여행 지도를 펼쳐 든 신더" width="1024" height="1024"><p id="info-character-caption">지도를 펼치고, 우리만의 부산 여행을 시작해요.</p></div><div id="info-content"></div></div></dialog>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 </body>
 </html>

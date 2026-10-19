@@ -6,7 +6,9 @@
     bridge: { number:'03', category:'만남의 기억 · 영도다리', title:'영도다리에 남겨진 편지', intro:'바다 위를 잇는 다리, 그리고 사람과 사람을 잇는 기억.', quote:'“이 다리는 바다의 양쪽만 이어준 게 아니었나 봐. 누군가를 다시 만날 수 있다는 마음도 이어주었대.”', history:'영도다리는 한국전쟁 당시 피란 중 헤어진 가족을 다시 만나기를 바라던 사람들이 모여든 장소였습니다. 오늘의 항구 풍경에 그 시절의 기다림을 겹쳐 보세요.', activity:'창작 이야기: 신더는 다리 근처에서 주소가 지워진 편지 한 통을 발견합니다. 편지의 주인공은 가상의 인물이며, 편지는 역사적 실물이 아닙니다. 당신이라면 오늘의 부산에서 어떤 안부를 전하고 싶나요?', visit:'영도다리와 주변 수변 공간에서 항구 풍경을 감상해 보세요. 도개행사 관람을 원한다면 부산시 공식 안내에서 최신 일정과 현장 상황을 확인해 주세요.', course:'추천 연결: 영도다리 → 유라리광장 → 남포동 주변 산책', source:'https://www.busan.go.kr/wartime_capital/busanheritage10', sourceName:'부산시 · 피란수도 부산유산 영도다리', search:'부산 영도대교' }
   };
   Object.assign(places, window.CINDER_TODAY_PLACES || {});
+  const visuals = window.CINDER_VISUALS || {};
   const $ = selector => document.querySelector(selector);
+  function setCharacter(selector,key) { const visual=visuals[key]; if(!visual)return; const image=$(selector); image.src=visual.src; image.alt=visual.alt; }
   let activeEra = 'memory';
   const eraPlaces = () => Object.keys(places).filter(id => Boolean(places[id].modern) === (activeEra === 'today'));
   const story = $('#story-dialog');
@@ -30,7 +32,8 @@
   function openPlace(id) {
     if (!Object.hasOwn(places,id)) return;
     if (info.open) info.close();
-    current=id; const place=places[id]; $('#story-category').textContent=place.category; $('#story-title').textContent=place.title; $('#story-intro').textContent=place.intro; $('.banner-number').textContent=place.number;
+    current=id; const place=places[id];
+    setCharacter('#story-character',id); $('#story-character-caption').textContent=visuals[id]?.caption || ''; $('#story-category').textContent=place.category; $('#story-title').textContent=place.title; $('#story-intro').textContent=place.intro; $('.banner-number').textContent=place.number;
     story.classList.toggle('modern-story',Boolean(place.modern));
     $('#tab-memory').textContent=place.modern?'소개와 대표 이야기':'기억 속 이야기';
     $('#tab-visit').textContent=place.modern?'여행 포인트':'오늘의 여행';
@@ -42,16 +45,17 @@
     if(tab==='memory') $('#story-panel').innerHTML=`<p class="story-quote">${place.quote}</p><p>${place.history}</p>${(place.highlights||[]).map(([title,text])=>`<section class="story-highlight"><h3>${title}</h3><p>${text}</p></section>`).join('')}<p>${place.activity}</p><p class="content-note">신더의 대사와 여행 미션은 창작입니다. 소개와 역사 해설은 아래 공식 자료를 참고했습니다. ‘발견한 기억’은 방문 인증이 아닌 읽은 이야기의 기록입니다.</p>${(place.sources|| (place.source?[[place.sourceName,place.source]]:[])).map(([name,url])=>`<a class="source-link source-row" href="${url}" target="_blank" rel="noopener noreferrer">공식 자료 · ${name} ↗</a>`).join('')}`;
     else $('#story-panel').innerHTML=`<p>${place.visit}</p><p class="story-quote">${place.course}</p><a class="source-link" href="https://map.naver.com/p/search/${encodeURIComponent(place.search)}" target="_blank" rel="noopener noreferrer">네이버 지도에서 위치 보기 ↗</a><p class="content-note">지도와 공식 자료 링크만 인터넷 연결이 필요합니다. 코스는 이동 시간·경사도·영업 여부를 확인해 조정해 주세요.</p>`;
   }
-  function openInfo(title,html) { if(story.open) story.close(); $('#info-title').textContent=title; $('#info-content').innerHTML=html; if(!info.open) openDialog(info); }
+  function openInfo(title,html) { const character=title==='내가 밝힌 부산의 기억'?'archive':'guide'; setCharacter('#info-character',character); $('#info-character-caption').textContent=visuals[character]?.caption || ''; if(story.open) story.close(); $('#info-title').textContent=title; $('#info-content').innerHTML=html; if(!info.open) openDialog(info); }
   document.querySelectorAll('[data-place]').forEach(button=>button.addEventListener('click',()=>openPlace(button.dataset.place)));
   $('#start').addEventListener('click',()=>openPlace(eraPlaces().find(id=>!memories.has(id))||eraPlaces()[0]));
-  $('#help').addEventListener('click',()=>openInfo('신더와 여행하는 방법',`<ol class="steps"><li><strong>두 가지 부산 지도를 만나보세요</strong>‘기억 속 부산’은 역사 장소 3곳, ‘오늘의 부산’은 현대 관광 명소 5곳을 보여줍니다.</li><li><strong>지도 위의 장소를 골라보세요</strong>역사 이야기 또는 명소 소개와 대표 이야기가 열립니다.</li><li><strong>마음에 남는 이야기를 간직하세요</strong>‘이 기억 간직하기’를 누르면 나의 기록에 저장됩니다.</li><li><strong>실제 부산 여행을 준비해 보세요</strong>여행 탭에서 방문 아이디어와 지도 연결을 확인하세요.</li></ol><p class="info-note">설치·로그인 없이 사용하는 로컬 데모입니다. 두 배경은 관광지를 재구성한 창작 일러스트이며 실제 지리·시대별 지도나 실시간 풍경은 아닙니다. 공식 자료 확인일: 2026.10.19. 운영시간과 행사 일정은 방문 전 공식 안내를 확인해 주세요.</p>`));
+  $('#help').addEventListener('click',()=>openInfo('신더와 여행하는 방법',`<ol class="steps"><li><strong>두 가지 부산 지도를 만나보세요</strong>‘기억 속 부산’은 역사 장소 3곳, ‘오늘의 부산’은 현대 관광 명소 5곳을 보여줍니다.</li><li><strong>지도 위의 장소를 골라보세요</strong>역사 이야기 또는 명소 소개와 대표 이야기가 열립니다.</li><li><strong>마음에 남는 이야기를 간직하세요</strong>‘이 기억 간직하기’를 누르면 나의 기록에 저장됩니다.</li><li><strong>실제 부산 여행을 준비해 보세요</strong>여행 탭에서 방문 아이디어와 지도 연결을 확인하세요.</li></ol>`));
   document.querySelectorAll('[data-close]').forEach(button=>button.addEventListener('click',()=>button.closest('dialog').close()));
   [story,info].forEach(dialog=>{dialog.addEventListener('click',event=>{if(event.target===dialog){const rect=dialog.getBoundingClientRect();if(event.clientX<rect.left||event.clientX>rect.right||event.clientY<rect.top||event.clientY>rect.bottom)dialog.close();}});dialog.addEventListener('close',()=>{returnFocus?.focus();document.querySelectorAll('[data-view]').forEach(button=>button.classList.toggle('active',button.dataset.view==='map'));});});
   document.querySelectorAll('[data-tab]').forEach(button=>{button.addEventListener('click',()=>renderTab(button.dataset.tab));button.addEventListener('keydown',event=>{if(['ArrowLeft','ArrowRight','Home','End'].includes(event.key)){event.preventDefault();const next=event.key==='Home'?'memory':event.key==='End'?'visit':button.dataset.tab==='memory'?'visit':'memory';renderTab(next);$(`#tab-${next}`).focus();}});});
   $('#collect').addEventListener('click',()=>{if(memories.has(current))return;memories.add(current);save();updateProgress();toast(memories.size===Object.keys(places).length?'부산의 여덟 가지 이야기를 모두 간직했어요!':'신더와의 기억을 간직했어요 ✦');});
   function setEra(era) {
     activeEra=era; const today=era==='today';
+    setCharacter('#cinder-companion',today?'guide':'archive');
     $('.hero').classList.toggle('today',today); $('.chapter').classList.toggle('today-chapter',today);
     $('.memory-landmarks').hidden=today; $('.today-landmarks').hidden=!today; $('#today-directory').hidden=!today;
     document.querySelectorAll('[data-era]').forEach(item=>{const selected=item.dataset.era===era;item.classList.toggle('selected',selected);item.setAttribute('aria-pressed',String(selected));});
@@ -73,10 +77,10 @@
     const view=button.dataset.view;
     if(view==='map'){ $('#map').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'}); return; }
     if(view==='routes') openInfo(activeEra==='today'?'오늘의 부산, 다섯 가지 여행':'기억 속 부산, 세 가지 산책',eraPlaces().map(id=>{const p=places[id];return `<button class="route-item" data-open-place="${id}"><strong>${p.modern?p.title:p.category.split(' · ').reverse().join(' · ')}</strong><span>${p.course.replace('추천 연결: ','')} ↗</span></button>`;}).join('')+'<p class="info-note">각 코스는 개별 산책 제안입니다. 모든 장소를 하나의 연속 도보 코스로 구성한 안내가 아닙니다.</p>');
-    if(view==='collection') openInfo('내가 밝힌 부산의 기억',memories.size?[...memories].map(id=>`<button class="collection-item" data-open-place="${id}"><strong>✦ ${places[id].title}</strong><span>${places[id].category} · 기억 다시 보기 →</span></button>`).join('')+'<button class="reset" id="reset-memories">기록 초기화</button>':'<div class="empty"><span>✧</span>아직 발견한 기억이 없어요.<br>지도 위의 작은 불빛에서 여행을 시작해 보세요.</div><button class="button button-primary" data-open-place="bridge">첫 번째 이야기 만나기 →</button>');
+    if(view==='collection') openInfo('내가 밝힌 부산의 기억',memories.size?[...memories].map(id=>`<button class="collection-item" data-open-place="${id}"><img class="collection-thumb" src="${visuals[id]?.src || 'assets/cinder.png'}" alt="" width="74" height="55" loading="lazy"><strong>✦ ${places[id].title}</strong><span>${places[id].category} · 기억 다시 보기 →</span></button>`).join('')+'<button class="reset" id="reset-memories">기록 초기화</button>':'<div class="empty"><span>✧</span>아직 발견한 기억이 없어요.<br>지도 위의 작은 불빛에서 여행을 시작해 보세요.</div><button class="button button-primary" data-open-place="bridge">첫 번째 이야기 만나기 →</button>');
     document.querySelectorAll('[data-view]').forEach(item=>item.classList.toggle('active',item===button));
   }));
-  $('#info-content').addEventListener('click',event=>{const target=event.target.closest('[data-open-place]');if(target)openPlace(target.dataset.openPlace);if(event.target.id==='reset-memories'&&confirm('이 브라우저에 저장한 세 장소의 기억 기록을 초기화할까요?')){memories.clear();save();updateProgress();info.close();toast('기록을 초기화했어요. 새로운 마음으로 떠나볼까요?');}});
+  $('#info-content').addEventListener('click',event=>{const target=event.target.closest('[data-open-place]');if(target)openPlace(target.dataset.openPlace);if(event.target.id==='reset-memories'&&confirm('이 브라우저에 저장한 모든 장소의 기억 기록을 초기화할까요?')){memories.clear();save();updateProgress();info.close();toast('기록을 초기화했어요. 새로운 마음으로 떠나볼까요?');}});
   let audioContext,master,nodes=[];
   $('#sound-toggle').addEventListener('click',async()=>{
     const button=$('#sound-toggle'); const playing=button.getAttribute('aria-pressed')==='true';

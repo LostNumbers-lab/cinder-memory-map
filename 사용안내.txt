@@ -10,6 +10,8 @@ styles.css : 디자인과 반응형 레이아웃
 typography.css : 온글잎 베리려원 글꼴 적용 및 글자 크기/간격 조정
 app.js : 장소 이야기, 기록 저장, 화면 전환, 배경음
 places-today.js : 현대 부산 관광지 소개, 대표 이야기 및 공식 출처
+cinder-visuals.js / cinder-visuals.css : 화면별 신더 이미지·설명·배치
+assets/cinder/ : 장소 일러스트 8종과 투명 배경 안내 캐릭터 2종
 assets/ : 지도 배경 및 신더 이미지
 assets/fonts/ : 공식 원본 온글잎 베리려원 TTF 및 출처/라이선스 안내
 

@@ -1,0 +1,59 @@
+{
+  "tool": "OpenAI built-in image_gen",
+  "references": [
+    "ChatGPT 이미지 2026년 10월 14일 오후 04_40_48.png (character identity)",
+    "ChatGPT 이미지 2026년 10월 14일 오후 04_41_11.png (front, side and back model sheet)"
+  ],
+  "images": [
+    {
+      "file": "stairs.png",
+      "transparent_background": false,
+      "prompt": "Use case: illustration-story. Create ONE polished landscape 3:2 story illustration for a Korean Busan travel website. Reference image 1 is the exact character identity; reference 2 is the front/side/back model sheet ONLY. Keep Cinder's huge swirling orange and cream flame hair, amber eyes, round cute face, black cloak with cream/orange trim and orange round brooch, black bowl-shaped lower body with golden flame emblem, tiny black boots. Preserve original anime chibi rendering and proportions. One Cinder only, no redesign or duplicate. Cinder fills about 45% of frame, FULL character including hair tip and boots visible. Elegant detailed watercolor/ink environmental background that harmonizes with the clean character. Warm amber and midnight teal palette. No text, letters, signage, speech bubbles, watermarks, borders, UI. Scene is an imaginative tourism illustration, not historical evidence. Cinder quietly climbing an old Busan hillside stone staircase beside stacked modest houses, carrying a tiny softly glowing lantern, thoughtful compassionate expression, looking up toward the next step. A peaceful dusk scene about remembering everyday lives, dignified not tragic, no refugees or reenactment."
+    },
+    {
+      "file": "books.png",
+      "transparent_background": false,
+      "prompt": "Use case: illustration-story. Create ONE polished landscape 3:2 story illustration for a Korean Busan travel website. Reference image 1 is the exact character identity; reference 2 is the front/side/back model sheet ONLY. Keep Cinder's huge swirling orange and cream flame hair, amber eyes, round cute face, black cloak with cream/orange trim and orange round brooch, black bowl-shaped lower body with golden flame emblem, tiny black boots. Preserve original anime chibi rendering and proportions. One Cinder only, no redesign or duplicate. Cinder fills about 45% of frame, FULL character including hair tip and boots visible. Elegant detailed watercolor/ink environmental background that harmonizes with the clean character. Warm amber and midnight teal palette. No text, letters, signage, speech bubbles, watermarks, borders, UI. Scene is an imaginative tourism illustration, not historical evidence. Cinder seated comfortably in a cozy old Busan secondhand bookshop alley, reading an open old book with a tiny blank bookmark tucked inside, curious gentle smile, warm hanging light, stacks of books with blank spines, memory spark near page."
+    },
+    {
+      "file": "bridge.png",
+      "transparent_background": false,
+      "prompt": "Use case: illustration-story. Create ONE polished landscape 3:2 story illustration for a Korean Busan travel website. Reference image 1 is the exact character identity; reference 2 is the front/side/back model sheet ONLY. Keep Cinder's huge swirling orange and cream flame hair, amber eyes, round cute face, black cloak with cream/orange trim and orange round brooch, black bowl-shaped lower body with golden flame emblem, tiny black boots. Preserve original anime chibi rendering and proportions. One Cinder only, no redesign or duplicate. Cinder fills about 45% of frame, FULL character including hair tip and boots visible. Elegant detailed watercolor/ink environmental background that harmonizes with the clean character. Warm amber and midnight teal palette. No text, letters, signage, speech bubbles, watermarks, borders, UI. Scene is an imaginative tourism illustration, not historical evidence. Cinder gently holding an aged blank envelope in both hands against the chest, tender contemplative face, standing on safe stone harbor promenade, Busan Yeongdo bascule bridge with steel truss structure over water in the background, evening warmth and soft reflections. Story about remembering reunions, not pretending envelope is real historical evidence."
+    },
+    {
+      "file": "cinema.png",
+      "transparent_background": false,
+      "prompt": "Create one landscape 3:2 illustration for Busan travel story. Use image1 EXACT Cinder character identity and image2 front side back model sheet as reference only. Same giant orange/cream swirling flame hair, amber eyes, chibi face, black cloak cream orange trim, round orange brooch, black bowl body with golden flame emblem, little black boots; character fully visible hair to boots and fills 45% of image. One character only. Polished original anime character rendering with detailed watercolor/ink scenery, amber and deep teal palette. No text, letters, signs, UI, speech bubbles or watermark. Cinder joyfully holding a small blank movie clapperboard and gesturing toward Busan Cinema Center behind, distinctive enormous flat silver cantilevered undulating Big Roof with cone support and red outdoor theater seats, Centum City modern skyline at dusk. Excited movie guide."
+    },
+    {
+      "file": "biff.png",
+      "transparent_background": false,
+      "prompt": "Create one landscape 3:2 illustration for Busan travel story. Use image1 EXACT Cinder character identity and image2 front side back model sheet as reference only. Same giant orange/cream swirling flame hair, amber eyes, chibi face, black cloak cream orange trim, round orange brooch, black bowl body with golden flame emblem, little black boots; character fully visible hair to boots and fills 45% of image. One character only. Polished original anime character rendering with detailed watercolor/ink scenery, amber and deep teal palette. No text, letters, signs, UI, speech bubbles or watermark. Cinder crouching slightly to examine a bronze handprint plaque embedded in a Busan movie street pavement, holding own open palm beside the print for comparison, curious delighted face. Cozy cinemas and a film reel sculpture behind. No readable signage."
+    },
+    {
+      "file": "gwangan.png",
+      "transparent_background": false,
+      "prompt": "Create one landscape 3:2 illustration for Busan travel story. Use image1 EXACT Cinder character identity and image2 front side back model sheet as reference only. Same giant orange/cream swirling flame hair, amber eyes, chibi face, black cloak cream orange trim, round orange brooch, black bowl body with golden flame emblem, little black boots; character fully visible hair to boots and fills 45% of image. One character only. Polished original anime character rendering with detailed watercolor/ink scenery, amber and deep teal palette. No text, letters, signs, UI, speech bubbles or watermark. Cinder standing on safe Gwangalli sandy shore holding a little vintage camera in both hands, happy eyes looking toward Gwangandaegyo two tower suspension bridge with catenary cables spanning night bay behind, turquoise sea and golden reflections, city lights. Never on roadway or bridge."
+    },
+    {
+      "file": "haeundae.png",
+      "transparent_background": false,
+      "prompt": "Use case illustration-story. Exactly preserve Cinder identity from image1; image2 is front/side/back identity model sheet ONLY. Keep huge orange cream flame hair, amber eyes, chibi round face, black cloak with cream/orange trim and orange brooch, black bowl body gold flame emblem and tiny boots. Single full body character hair tip to boots, no cropping, no duplicates. Polished original anime style. No text, letters, numbers, watermark, signage or speech bubbles. Landscape 3:2 postcard illustration. Cinder holding a seashell near one ear listening with relaxed joyful smile, on Haeundae beach, rolling turquoise waves, soft bright morning, distant modern tall glass skyline. Original full outfit retained no swimwear. Detailed watercolor/ink environment, character about 45% of frame."
+    },
+    {
+      "file": "gamcheon.png",
+      "transparent_background": false,
+      "prompt": "Use case illustration-story. Exactly preserve Cinder identity from image1; image2 is front/side/back identity model sheet ONLY. Keep huge orange cream flame hair, amber eyes, chibi round face, black cloak with cream/orange trim and orange brooch, black bowl body gold flame emblem and tiny boots. Single full body character hair tip to boots, no cropping, no duplicates. Polished original anime style. No text, letters, numbers, watermark, signage or speech bubbles. Landscape 3:2 postcard illustration. Cinder standing in a public village lane holding a small sketchbook and watercolor palette, looking with happy thoughtful eyes at tightly clustered pastel blue pink yellow cubical houses on Gamcheon hillside. Never painting on houses, walls untouched. Gentle color swatches in sketchbook without letters. Detailed watercolor/ink background, character fills 45%."
+    },
+    {
+      "file": "guide.png",
+      "transparent_background": true,
+      "prompt": "Use case illustration-story. Exactly preserve Cinder identity from image1; image2 is front/side/back identity model sheet ONLY. Keep huge orange cream flame hair, amber eyes, chibi round face, black cloak with cream/orange trim and orange brooch, black bowl body gold flame emblem and tiny boots. Single full body character hair tip to boots, no cropping, no duplicates. Polished original anime style. No text, letters, numbers, watermark, signage or speech bubbles. Transparent background character cutout, square canvas with generous padding. One Cinder holding a small unfolded tourist map with abstract blue coast and orange dotted path (no text) in one hand, pointing invitingly toward right with other hand, cheerful bright adventurous expression, slightly three-quarter front view. Exact original outfit, golden flame emblem visible, no background, no scenery, no shadow plate, no ground. Full-body clean alpha cutout."
+    },
+    {
+      "file": "archive.png",
+      "transparent_background": true,
+      "prompt": "Use case illustration-story. Exactly preserve Cinder identity from image1; image2 is front/side/back identity model sheet ONLY. Keep huge orange cream flame hair, amber eyes, chibi round face, black cloak with cream/orange trim and orange brooch, black bowl body gold flame emblem and tiny boots. Single full body character hair tip to boots, no cropping, no duplicates. Polished original anime style. No text, letters, numbers, watermark, signage or speech bubbles. Transparent background character cutout, square canvas with generous padding. One Cinder gently holding an open small dark navy memory scrapbook with orange corners in both hands, a few tiny golden memory sparks floating above its pages, tender warm contented smile, three-quarter front view. Exact original outfit, black bowl with golden emblem visible below book, all boots and flame tip in frame. No background, no scenery, no floor, no shadow plate, clean alpha cutout."
+    }
+  ]
+}
