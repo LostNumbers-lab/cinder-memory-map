@@ -60,4 +60,10 @@
 
 ## Google Analytics
 
-`index.html`의 `<head>` 바로 다음에 GA4 측정 ID `G-XD9HRFBB5S`의 Google 태그가 한 번만 설치되어 있습니다. 장소 상세·여행 코스·이용 방법은 동일한 HTML에서 열리는 대화상자이므로 태그를 추가로 삽입하지 않습니다. 실제 수집 여부는 배포 주소 방문 후 Google Analytics의 실시간 보고서에서 확인할 수 있습니다.
+`index.html`의 `<head>` 안에 GA4 측정 ID `G-XD9HRFBB5S`의 Google 태그가 한 번만 설치되어 있습니다. 장소 상세·여행 코스·이용 방법은 동일한 HTML에서 열리는 대화상자이므로 태그를 추가로 삽입하지 않습니다. 실제 수집 여부는 배포 주소 방문 후 Google Analytics의 실시간 보고서에서 확인할 수 있습니다.
+
+## Google Tag Manager
+
+컨테이너 `GTM-KGGM9LSP`의 스크립트는 `<head>` 바로 다음에, `noscript` iframe은 여는 `<body>` 바로 다음에 각각 한 번만 설치되어 있습니다. GA4와 GTM은 동일한 `dataLayer`를 사용합니다.
+
+기존 GA4 직접 설치는 유지합니다. 나중에 같은 측정 ID의 Google 태그를 GTM에서도 실행하도록 전환한다면, 중복 집계를 방지하기 위해 직접 설치한 GA4 코드와 컨테이너 설정을 함께 정리해야 합니다. GTM 관리자에서 태그를 생성하거나 게시하는 작업은 웹사이트 코드 배포와 별개입니다.
